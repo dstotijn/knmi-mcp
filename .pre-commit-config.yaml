@@ -1,0 +1,7 @@
+repos:
+    - repo: https://github.com/google/addlicense
+      rev: b289835c0741ba2fb92dd5f61af070e79c69a55e
+      hooks:
+          - id: addlicense
+            types: [ts]
+            args: ["-c", "David Stotijn"]

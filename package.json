@@ -1,0 +1,53 @@
+{
+	"name": "@dstotijn/knmi-mcp",
+	"version": "0.1.3",
+	"type": "module",
+	"description": "KNMI Model Context Protocol (MCP) server",
+	"author": "David Stotijn <dstotijn@gmail.com>",
+	"repository": "https://github.com/dstotijn/knmi-mcp",
+	"license": "Apache-2.0",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"bin": {
+		"knmi-mcp": "dist/index.js"
+	},
+	"engines": {
+		"node": ">=22.0.0"
+	},
+	"scripts": {
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"dev": "tsx src/index.ts",
+		"dev:watch": "tsx watch src/index.ts",
+		"clean": "rimraf dist",
+		"prebuild": "npm run clean",
+		"typecheck": "tsc --noEmit",
+		"biome:fix": "biome check --write",
+		"generate:types": "openapi-typescript https://gitlab.com/KNMI-OSS/KNMI-App/knmi-app-openapi-spec/-/raw/main/openapi.yml --output src/types/knmi-api.ts"
+	},
+	"keywords": [
+		"mcp",
+		"model-context-protocol",
+		"knmi",
+		"weather",
+		"climate"
+	],
+	"devDependencies": {
+		"@biomejs/biome": "^2.1.1",
+		"@types/node": "^24.0.14",
+		"openapi-typescript": "^7.8.0",
+		"rimraf": "^6.0.1",
+		"tsx": "^4.20.3",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.15.1",
+		"openapi-fetch": "^0.14.0"
+	}
+}
