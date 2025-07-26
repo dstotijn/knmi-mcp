@@ -4,6 +4,10 @@ A [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that
 provides access to Dutch weather data via the KNMI (Royal Netherlands
 Meteorological Institute) API.
 
+<a href="https://glama.ai/mcp/servers/@dstotijn/knmi-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@dstotijn/knmi-mcp/badge" alt="KNMI Server MCP server" />
+</a>
+
 ## Overview
 
 This MCP server enables AI assistants and applications to access comprehensive
